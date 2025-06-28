@@ -3,6 +3,9 @@
 ## Overview
 This project implements a secure authentication system using Spring Boot Security with JWT (JSON Web Token) authentication. The system provides user registration and authentication endpoints, along with secured API routes.
 
+## Authentication Flow
+![Authentication Flow](auth.png)
+
 ## Features
 
 ### Security Configuration
@@ -13,10 +16,11 @@ This project implements a secure authentication system using Spring Boot Securit
 - Protected routes requiring authentication
 
 ### Authentication Endpoints
-The following endpoints are available under `/api/v1/auth`:
+All API endpoints are documented in `requests.http` file for easy testing. The following endpoints are available:
 
 - **POST /api/v1/auth/register** - User registration
 - **POST /api/v1/auth/authenticate** - User authentication
+- **GET /api/v1/demo-controller** - Protected demo endpoint (requires JWT token)
 
 ### Security Components
 
@@ -71,3 +75,6 @@ All endpoints except `/api/v1/auth/**` require authentication. Protected endpoin
 - Role-based access control
 - Secure password encoding
 - Protected endpoints
+
+## Testing
+All API endpoints can be tested using the provided `requests.http` file in the project root. Simply open it in IntelliJ IDEA and use the built-in HTTP client to execute the requests.
